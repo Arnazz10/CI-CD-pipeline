@@ -1,26 +1,46 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-background: #0d1117;
+  --color-surface: #161b22;
+  --color-border: #30363d;
+  --color-accent: #00e5c0;
+  --color-foreground: #c9d1d9;
+  --color-muted: #8b949e;
+  --color-success: #238636;
+  --color-danger: #da3633;
+  --color-warning: #d29922;
+
+  --font-mono: "JetBrains Mono", fira-code, monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    @apply antialiased;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .surface {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+  
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    @apply font-semibold px-4 py-2 rounded-md transition-opacity hover:opacity-90;
+  }
+}
+
+/* Custom terminal font fallback */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
 }
