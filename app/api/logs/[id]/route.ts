@@ -5,10 +5,10 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const encoder = new TextEncoder();
-  const runId = params.id;
+  const { id: runId } = await params;
 
   const stream = new ReadableStream({
     async start(controller) {

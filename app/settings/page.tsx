@@ -9,7 +9,7 @@ import {
   ExternalLink, 
   Save, 
   Trash2,
-  Github,
+  GitBranch,
   Globe,
   Database
 } from 'lucide-react';
@@ -26,7 +26,7 @@ export default function SettingsPage() {
         {/* Sidebar Nav */}
         <div className="lg:col-span-1 space-y-2">
           {[
-            { label: 'Integrations', icon: Github, active: true },
+            { label: 'Integrations', icon: GitBranch, active: true },
             { label: 'Cluster Context', icon: Layout, active: false },
             { label: 'Environment Secrets', icon: Lock, active: false },
             { label: 'Notifications', icon: Bell, active: false },
@@ -54,7 +54,7 @@ export default function SettingsPage() {
           <div className="surface rounded-2xl overflow-hidden">
             <div className="px-6 py-4 border-b border-[var(--border)] bg-[var(--background)] flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Github className="w-5 h-5" />
+                <GitBranch className="w-5 h-5" />
                 <h3 className="text-xs font-black uppercase tracking-widest">Source Control</h3>
               </div>
               <div className="flex items-center gap-1 text-[10px] uppercase font-black text-[var(--accent)]">
@@ -66,7 +66,7 @@ export default function SettingsPage() {
               <div className="flex items-center justify-between p-4 rounded-xl bg-[var(--background)] border border-[var(--border)]">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                    <Github className="w-6 h-6" />
+                    <GitBranch className="w-6 h-6" />
                   </div>
                   <div>
                     <div className="text-sm font-bold">arnazz10/pipeline-hub</div>
